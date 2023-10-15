@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .swiper-button-prev, .swiper-button-next {
     color: rgb(220, 38, 38) !important;
 }

@@ -3,6 +3,7 @@ import React from "react";
 import bannerImage from "../../../public/assets/images/news-image.jpg";
 
 const BannerItem = () => {
+
   return (
     <div className="relative rounded-lg overflow-hidden h-full">
       <Image
