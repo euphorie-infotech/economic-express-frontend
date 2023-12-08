@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NewsCard = ({title, slug}) => {
     return (
-        <Link href={slug}>
+        <Link href={slug??'aaa'}>
             <div>
                 <Image
                     src={newsHeader}

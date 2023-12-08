@@ -12,30 +12,27 @@ const Index = (props) => {
             <div className="flex py-10 flex-wrap">
                 <div className="basis-1/2 px-2 overflow-x-hidden h-[50vh]">
                      {/*<MainBanner />*/}
-                    <BannerItem/>
+                    <BannerItem title={props.newses[0].title} slug={props.newses[0].slug}/>
                 </div>
                 <div className="basis-1/2 px-2 h-[50vh] flex flex-wrap">
-                    <div className="basis-1/2 px-2  overflow-y-scroll">
-                        <SubBannerItem/>
-                    </div>
-                    <div className="basis-1/2 px-2  overflow-y-scroll">
-                        <SubBannerItem/>
-                    </div>
-                    <div className="basis-1/2 px-2  overflow-y-scroll">
-                        <SubBannerItem/>
-                    </div>
-                    <div className="basis-1/2 px-2  overflow-y-scroll">
-                        <SubBannerItem/>
-                    </div>
+                        {
+                            props.newses.slice(1,5).map(n=>(
+                                <SubBannerItem
+                                    key={n.id}
+                                    title={n.title}
+                                    slug={n.slug}
+                                />
+                            ))
+                        }
                 </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
                 {
-                    props.newses.map(n=>(
+                    props.newses.slice(5).map(n=>(
                         <NewsCard
                             key={n.id}
                             title={n.title}
-                            slug={n.title}
+                            slug={n.slug}
                         />
                     ))
                 }
